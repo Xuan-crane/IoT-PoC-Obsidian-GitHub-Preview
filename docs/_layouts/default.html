@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">PoC 相似性 · Obsidian 风格</a>
+      <a class="repo-link" href="https://github.com/Xuan-crane/IoT-PoC-Obsidian-GitHub-Preview">GitHub 仓库 ↗</a>
+    </div>
+  </header>
+  <div class="site-layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">按固件浏览</div>
+      <nav>
+        <a href="{{ '/' | relative_url }}">总索引</a>
+        <a href="{{ '/A7100RU.html' | relative_url }}">A7100RU</a>
+        <a href="{{ '/AC500.html' | relative_url }}">AC500</a>
+        <a href="{{ '/DIR-816.html' | relative_url }}">DIR-816</a>
+        <a href="{{ '/DIR-818LW.html' | relative_url }}">DIR-818LW</a>
+        <a href="{{ '/DIR-823G.html' | relative_url }}">DIR-823G</a>
+        <a href="{{ '/DIR-823X.html' | relative_url }}">DIR-823X</a>
+        <a href="{{ '/T6.html' | relative_url }}">T6</a>
+      </nav>
+      <div class="sidebar-note">页面由 Markdown 源文件生成；请求块可直接复制。</div>
+    </aside>
+    <main class="content markdown-body">
+      {{ content }}
+    </main>
+  </div>
+  <script>
+    document.querySelectorAll('pre').forEach(function (pre) {
+      var wrap = document.createElement('div');
+      wrap.className = 'pre-wrap';
+      pre.parentNode.insertBefore(wrap, pre);
+      wrap.appendChild(pre);
+      var button = document.createElement('button');
+      button.className = 'copy-button';
+      button.type = 'button';
+      button.textContent = '复制请求';
+      button.addEventListener('click', function () {
+        navigator.clipboard.writeText(pre.textContent).then(function () {
+          button.textContent = '已复制';
+          setTimeout(function () { button.textContent = '复制请求'; }, 1200);
+        });
+      });
+      wrap.appendChild(button);
+    });
+  </script>
+</body>
+</html>
