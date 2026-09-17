@@ -40,5 +40,6 @@ body { margin: 0; color: var(--ink); background: var(--page); font-family: -appl
 .copy-button:hover { color: #1d4ed8; border-color: #93c5fd; }
 .markdown-body mark { padding: 0 .12em; border-radius: 3px; background: #fed7aa; color: #9a3412; }
 .markdown-body blockquote { border-left-color: #f59e0b; }
-@media (max-width: 950px) { .site-layout { grid-template-columns: 1fr; padding: 12px; } .sidebar { position: static; } .sidebar nav { display: flex; flex-wrap: wrap; } .content { padding: 20px 14px 40px; } .markdown-body .comparison-grid { grid-template-columns: 1fr; } }
+@media (max-width: 950px) { .site-layout { grid-template-columns: 1fr; padding: 12px; } .sidebar { position: static; } .sidebar nav { display: flex; flex-wrap: wrap; } .content { padding: 20px 14px 40px; } }
+@media (max-width: 720px) { .markdown-body .comparison-grid { grid-template-columns: 1fr; } }
 @media (max-width: 620px) { .header-inner { padding: 10px 14px; } .repo-link { display: none; } .markdown-body h1 { font-size: 1.55rem; } .markdown-body .poc-card { padding: 12px; } .markdown-body table { display: block; overflow: visible; } .markdown-body tbody, .markdown-body tr { display: block; } .markdown-body td, .markdown-body th { display: block; width: 100% !important; margin-bottom: 16px; } }
