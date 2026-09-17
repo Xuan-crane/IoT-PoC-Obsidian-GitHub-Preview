@@ -2,18 +2,12 @@
 layout: default
 permalink: /DIR-818LW.html
 title: DIR-818LW PoC 大块彩色对照
-date: 2026-09-15
-firmware: DIR-818LW
-source_note: "same file (repo root)"
-tags:
-  - IoT漏洞挖掘
-  - CVE
-  - PoC相似性
+firmware: "BM-2024-00083 · D-Link DIR-823G v1.0.2B05"
 ---
 
 # DIR-818LW PoC 大块彩色对照
 
-> GitHub 兼容展示版：公共部分保留原文；<mark>黄色区域</mark>表示原 PoC 中的字段、接口、长度或载荷差异；🔴/🟠/🔵表示相似等级。每个请求块仍可直接选中复制，来源链接保持可点击。
+> 固件版本：BM-2024-00083 · D-Link DIR-823G v1.0.2B05（CVE 归属 DIR-818LW）。
 
 > [!WARNING] 固件归属
 > 三条 CVE 的漏洞归属是 **DIR-818LW**（NVD + TeamSeri0us 原始 PDF 一致），但下方请求实际抓自 **BM-2024-00083 = DIR-823G v1.0.2B05** 镜像，不是 818LW。三条彼此之间的相似性成立（同一镜像、同一 SetWanSettings XML）；但“同固件”严格来说只到 B05 镜像这一层，不能据此断言 818LW 上的行为。复现直接用 BM-2024-00083 容器即可。
@@ -23,8 +17,6 @@ tags:
 
 > [!CAUTION]
 > 高度相似组；<mark>黄色高亮</mark>为原 PoC 中实际变化的字段、接口、长度或载荷。
-
-普通文字/边框：原始请求的大部分骨架完全相同。　<mark>黄色高亮：原请求中实际变化的字段。</mark>
 
 ### A 级：CVE-2019-12786 ↔ CVE-2019-12787
 

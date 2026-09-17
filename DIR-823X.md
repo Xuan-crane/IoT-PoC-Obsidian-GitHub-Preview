@@ -2,24 +2,14 @@
 layout: default
 permalink: /DIR-823X.html
 title: DIR-823X PoC 大块彩色对照
-date: 2026-09-15
-firmware: DIR-823X
-source_note: "same file (repo root)"
-tags:
-  - IoT漏洞挖掘
-  - CVE
-  - PoC相似性
+firmware: "D-Link DIR-823X 240126 / 240802 / 250416"
 ---
 
 # DIR-823X PoC 大块彩色对照
 
-> GitHub 兼容展示版：公共部分保留原文；<mark>黄色区域</mark>表示原 PoC 中的字段、接口、长度或载荷差异；🔴/🟠/🔵表示相似等级。每个请求块仍可直接选中复制，来源链接保持可点击。
-
-> [!NOTE] 设备与版本
-> D-Link DIR-823X 基准版本包括 240126、240802、250416；CVE-2026-1544 仅影响厂商已停止维护的产品（EOL）。
-
-
-普通文字/边框：请求骨架和原始 PoC 来源高度一致。　<mark>黄色高亮：字段、接口或命令边界的原始变化。</mark>
+> 固件版本：D-Link DIR-823X 240126 / 240802 / 250416。
+>
+> CVE-2026-1544 仅影响厂商已停止维护的产品（EOL）。
 
 ## A 级：CVE-2025-11095 ↔ CVE-2025-11097
 

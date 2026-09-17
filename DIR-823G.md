@@ -2,23 +2,15 @@
 layout: default
 permalink: /DIR-823G.html
 title: DIR-823G PoC 大块彩色对照
-date: 2026-09-15
-firmware: DIR-823G
-source_note: "same file (repo root)"
-tags:
-  - IoT漏洞挖掘
-  - CVE
-  - PoC相似性
+firmware: "D-Link DIR-823G A1 v1.0.2B03 / v1.0.2B05"
 ---
 
 # DIR-823G PoC 大块彩色对照
 
-> GitHub 兼容展示版：公共部分保留原文；<mark>黄色区域</mark>表示原 PoC 中的字段、接口、长度或载荷差异；🔴/🟠/🔵表示相似等级。每个请求块仍可直接选中复制，来源链接保持可点击。
+> 固件版本：D-Link DIR-823G A1 v1.0.2B03 / v1.0.2B05。
 
 > [!WARNING] 仿真环境版本说明
 > BM-2024-00002 对应 DIR-823G A1 v1.0.2B03；BM-2024-00083 对应 DIR-823G v1.0.2B05。CVE-2019-15528/15529/15530、CVE-2020-25367/25368 的 NVD 描述指向 V1.0.2B05，但其中部分 seed 挂在 BM-2024-00002；环境与描述存在版本错配，复现时以实际镜像版本为准。
-
-普通文字/边框：原始请求主体的公共部分。　<mark>黄色高亮：原始请求中确实不同的地方。</mark>　🔴标题：相似度高。
 
 ## A 级：CVE-2019-7297 ↔ CVE-2022-43109
 
