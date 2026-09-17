@@ -27,14 +27,18 @@ body { margin: 0; color: var(--ink); background: var(--page); font-family: -appl
 .markdown-body h1 { margin-top: 0; color: #1e3a8a; font-size: 2rem; border-bottom: 2px solid #dbe4f0; padding-bottom: .35em; }
 .markdown-body h2 { margin-top: 2.2em; color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: .25em; }
 .markdown-body h3 { margin-bottom: .45em; color: #1f2937; }
+.markdown-body .comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; margin: 16px 0 30px; }
+.markdown-body .comparison-row { display: contents; }
+.markdown-body .poc-card { min-width: 0; padding: 16px; background: #fbfdff; border: 1px solid #d8e2ef; border-radius: 10px; box-shadow: 0 3px 12px rgba(15,23,42,.04); }
+.markdown-body .poc-card > div { overflow-wrap: anywhere; }
 .markdown-body a { color: #2563eb; }
 .markdown-body table { width: 100%; max-width: 100%; table-layout: fixed; }
 .markdown-body td, .markdown-body th { min-width: 0; overflow-wrap: anywhere; }
-.markdown-body pre { max-width: 100%; margin: 12px 0; padding: 16px; overflow-x: hidden; overflow-y: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; tab-size: 4; border: 1px solid #e2e8f0; border-radius: 9px; background: #f8fafc; color: #1f2937; font: .9rem/1.48 Consolas, "Cascadia Code", "Courier New", monospace; }
+.markdown-body pre { width: 100%; min-width: 0; max-width: 100%; margin: 12px 0; padding: 16px; overflow-x: hidden; overflow-y: auto; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; tab-size: 4; border: 1px solid #e2e8f0; border-radius: 9px; background: #f8fafc; color: #1f2937; font: .9rem/1.48 Consolas, "Cascadia Code", "Courier New", monospace; }
 .pre-wrap { position: relative; min-width: 0; }
 .copy-button { position: absolute; right: 9px; top: 9px; padding: 4px 9px; color: #475569; background: rgba(255,255,255,.92); border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-size: .78rem; }
 .copy-button:hover { color: #1d4ed8; border-color: #93c5fd; }
 .markdown-body mark { padding: 0 .12em; border-radius: 3px; background: #fed7aa; color: #9a3412; }
 .markdown-body blockquote { border-left-color: #f59e0b; }
-@media (max-width: 950px) { .site-layout { grid-template-columns: 1fr; padding: 12px; } .sidebar { position: static; } .sidebar nav { display: flex; flex-wrap: wrap; } .content { padding: 20px 14px 40px; } }
-@media (max-width: 620px) { .header-inner { padding: 10px 14px; } .repo-link { display: none; } .markdown-body h1 { font-size: 1.55rem; } .markdown-body table { display: block; overflow: visible; } .markdown-body tbody, .markdown-body tr { display: block; } .markdown-body td, .markdown-body th { display: block; width: 100% !important; margin-bottom: 16px; } }
+@media (max-width: 950px) { .site-layout { grid-template-columns: 1fr; padding: 12px; } .sidebar { position: static; } .sidebar nav { display: flex; flex-wrap: wrap; } .content { padding: 20px 14px 40px; } .markdown-body .comparison-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .header-inner { padding: 10px 14px; } .repo-link { display: none; } .markdown-body h1 { font-size: 1.55rem; } .markdown-body .poc-card { padding: 12px; } .markdown-body table { display: block; overflow: visible; } .markdown-body tbody, .markdown-body tr { display: block; } .markdown-body td, .markdown-body th { display: block; width: 100% !important; margin-bottom: 16px; } }
