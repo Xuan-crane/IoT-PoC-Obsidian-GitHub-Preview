@@ -1,0 +1,11 @@
+title: IoT PoC Obsidian-style Preview
+description: Two-column PoC comparison pages
+markdown: kramdown
+theme: null
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
+exclude:
+  - README.md
+  - docs

@@ -1,8 +1,10 @@
 ---
+layout: default
+permalink: /DIR-823G.html
 title: DIR-823G PoC 大块彩色对照
 date: 2026-09-15
 firmware: DIR-823G
-source_note: "../../DIR-823G.md"
+source_note: "same file (repo root)"
 tags:
   - IoT漏洞挖掘
   - CVE
@@ -78,7 +80,7 @@ Connection: close
 
 判定：请求 Body 的操作名和 Address 注入位置高度一致，属于同接口高相似组；SOAPAction、数字参数和地址包装必须保留为差异。
 
-来源：[CVE-2019-7297 原始请求](../../DIR-823G.md#CVE-2019-7297)、[CVE-2022-43109 原始请求](../../DIR-823G.md#CVE-2022-43109)。
+来源：[CVE-2019-7297 原始请求](#CVE-2019-7297)、[CVE-2022-43109 原始请求](#CVE-2022-43109)。
 
 ## B 级：CVE-2019-13128 ↔ CVE-2019-15528
 
@@ -140,7 +142,7 @@ Cookie: &lt;SESSION_COOKIE&gt;
 
 <mark>判定：同一 SetStaticRouteSettings 路由对象模板，但比 A 级多出 SOAPAction、列表名和注入字段差异，属于“明显相似”而不是逐字相同。</mark>
 
-来源：[CVE-2019-13128 原始请求](../../DIR-823G.md#CVE-2019-13128)、[CVE-2019-15528 原始请求](../../DIR-823G.md#CVE-2019-15528)。
+来源：[CVE-2019-13128 原始请求](#CVE-2019-13128)、[CVE-2019-15528 原始请求](#CVE-2019-15528)。
 
 ## A 级：CVE-2019-15529 ↔ CVE-2019-15530 ↔ CVE-2020-25367 ↔ CVE-2020-25368
 

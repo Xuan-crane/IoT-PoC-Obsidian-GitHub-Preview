@@ -1,8 +1,10 @@
 ---
+layout: default
+permalink: /DIR-818LW.html
 title: DIR-818LW PoC 大块彩色对照
 date: 2026-09-15
 firmware: DIR-818LW
-source_note: "../../DIR-818LW.md"
+source_note: "same file (repo root)"
 tags:
   - IoT漏洞挖掘
   - CVE
@@ -138,7 +140,7 @@ Connection: keep-alive
 
 几乎完全重复。 共同部分是 `/HNAP1/`、`SetWanSettings`、DHCP XML 和 ``'&#96;reboot&#96;'``；变化只发生在 `IPAddress`、`Gateway`、`MTU` 三个业务字段。
 
-完整原始请求：[CVE-2019-12786](../../DIR-818LW.md#CVE-2019-12786)、[CVE-2019-12787](../../DIR-818LW.md#CVE-2019-12787)、[CVE-2019-13481](../../DIR-818LW.md#CVE-2019-13481)。
+完整原始请求：[CVE-2019-12786](#CVE-2019-12786)、[CVE-2019-12787](#CVE-2019-12787)、[CVE-2019-13481](#CVE-2019-13481)。
 
 > [!NOTE] HNAP1 抓包字段说明
 > 三条 seed 的 SOAPAction 均为 GetWanCurrentStatus，而请求 Body 为 SetWanSettings；这是 seed 原文中的抓包特征，本页按原文保留，没有把它改写成看似更规范的 SOAPAction。
